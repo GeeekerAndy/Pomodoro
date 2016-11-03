@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_tomato"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    tools:context="edu.sdu.andy.pomodoro.TomatoActivity">
+
+    <edu.sdu.andy.pomodoro.Circle
+        android:id="@+id/circle_tomato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </edu.sdu.andy.pomodoro.Circle>
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <cn.iwgang.countdownview.CountdownView
+            android:id="@+id/cv_tomato_countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:isShowMinute="true"
+            app:isShowSecond="true"
+            app:timeTextColor="#000000"
+            app:timeTextSize="60sp"
+            app:suffixGravity="bottom"
+            app:suffixTextColor="#000000"
+            app:suffixTextSize="30sp"
+            app:suffixMinute="m"
+            app:suffixSecond="s" />
+    </RelativeLayout>
+</RelativeLayout>
