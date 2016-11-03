@@ -24,7 +24,7 @@
             app:isShowMinute="true"
             app:isShowSecond="true"
             app:timeTextColor="#000000"
-            app:timeTextSize="60sp"
+            app:timeTextSize="70sp"
             app:suffixGravity="bottom"
             app:suffixTextColor="#000000"
             app:suffixTextSize="30sp"

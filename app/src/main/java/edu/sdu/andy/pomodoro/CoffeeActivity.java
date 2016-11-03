@@ -1,7 +1,10 @@
 package edu.sdu.andy.pomodoro;
 
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
@@ -13,6 +16,7 @@ import cn.iwgang.countdownview.CountdownView;
 public class CoffeeActivity extends AppCompatActivity {
 
     private long coffeeTime = 5*60*1000;
+//    private long coffeeTime = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +37,23 @@ public class CoffeeActivity extends AppCompatActivity {
                 //Define Notification Manager
                 NotificationManager notificationManager = (NotificationManager) CoffeeActivity.this.getSystemService(Context.NOTIFICATION_SERVICE);
 
-//Define sound URI
+                //Define sound URI
                 Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext())
-                        .setSmallIcon(R.drawable.cafe)
-                        .setContentTitle("Time Up.")
-                        .setContentText("Work with passion!")
-                        .setSound(soundUri); //This sets the sound to play
+                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext());
+                mBuilder.setContentTitle("Time Up.");
+                mBuilder.setContentText("Work with passion!");
+                mBuilder.setSmallIcon(R.drawable.cafe);
+                mBuilder.setLargeIcon(BitmapFactory.decodeResource(CoffeeActivity.this.getResources(), R.drawable.tomato));
+                mBuilder.setSound(soundUri); //This sets the sound to play
 
-//Display notification
+                //Set the notification's click behaviour
+                Intent resultIntent = new Intent(CoffeeActivity.this, MainActivity.class);
+                PendingIntent resultPendingIntent = PendingIntent.getActivity(CoffeeActivity.this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                mBuilder.setContentIntent(resultPendingIntent);
+                mBuilder.setAutoCancel(true);
+
+                //Display notification
                 notificationManager.notify(0, mBuilder.build());
             }
         });
