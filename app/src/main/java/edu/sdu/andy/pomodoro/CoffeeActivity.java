@@ -43,8 +43,8 @@ public class CoffeeActivity extends AppCompatActivity {
                 NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext());
                 mBuilder.setContentTitle("Time Up.");
                 mBuilder.setContentText("Work with passion!");
-                mBuilder.setSmallIcon(R.drawable.cafe);
-                mBuilder.setLargeIcon(BitmapFactory.decodeResource(CoffeeActivity.this.getResources(), R.drawable.tomato));
+                mBuilder.setSmallIcon(R.mipmap.nescafe);
+                mBuilder.setLargeIcon(BitmapFactory.decodeResource(CoffeeActivity.this.getResources(), R.mipmap.mtomato));
                 mBuilder.setSound(soundUri); //This sets the sound to play
 
                 //Set the notification's click behaviour

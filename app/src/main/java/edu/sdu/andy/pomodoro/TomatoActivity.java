@@ -48,8 +48,8 @@ public class TomatoActivity extends AppCompatActivity {
                 mBuilder.setContentTitle("Well done !");
                 mBuilder.setContentText("Take a break.");
 //                    mBuilder.setColor(TomatoActivity.this.getResources().getColor(R.color.mainColor));
-                mBuilder.setSmallIcon(R.drawable.tomato_black_hollow);
-                mBuilder.setLargeIcon(BitmapFactory.decodeResource(TomatoActivity.this.getResources(), R.drawable.tomato));
+                mBuilder.setSmallIcon(R.mipmap.tomato_black_hollow);
+                mBuilder.setLargeIcon(BitmapFactory.decodeResource(TomatoActivity.this.getResources(), R.mipmap.mtomato));
                 mBuilder.setSound(soundUri); //This sets the sound to play
 
                 //Set the notification's click behavior
